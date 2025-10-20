@@ -1,1 +1,33 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Virtual environments ===
 .venv/
+env/
+venv/
+
+# === Jupyter Notebooks ===
+.ipynb_checkpoints/
+
+# === macOS ===
+.DS_Store
+**/.DS_Store
+
+# === Windows ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === VS Code ===
+.vscode/
+
+# === Logs and temporary files ===
+*.log
+
+# === CSV / data cache (optional) ===
+# Om vi laddar genererar datafiler som inte ska versioneras,
+# kan vi namnge dem här med vägen data/
+

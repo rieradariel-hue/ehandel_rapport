@@ -1,0 +1,12 @@
+# inga tekniska detaljer
+
+# Importera funktioner
+from src.metrics import calculate_aov
+from src.io_utils import ladda_data
+
+# Ladda data (enkel och ren)
+df = ladda_data('../data/ecommerce_sales.csv')
+
+# Beräkna AOV
+aov = calculate_aov(df)
+print(f"Genomsnittligt ordervärde: {aov:.2f} SEK")

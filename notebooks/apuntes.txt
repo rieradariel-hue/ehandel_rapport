@@ -10,3 +10,43 @@ df = ladda_data('../data/ecommerce_sales.csv')
 # Beräkna AOV
 aov = calculate_aov(df)
 print(f"Genomsnittligt ordervärde: {aov:.2f} SEK")
+
+
+-----------------------
+For your NEW functions - use this pattern:
+
+
+def calculate_order_distribution(df):
+    """
+    Analyserar spridning av ordervärden
+    Returnerar dict med nyckeltal för distribution
+    """
+    return {
+        'medelvarde': df['revenue'].mean(),
+        'median': df['revenue'].median(),
+        'standardavvikelse': df['revenue'].std(),
+        'percentil_25': df['revenue'].quantile(0.25),
+        'percentil_75': df['revenue'].quantile(0.75),
+        'min': df['revenue'].min(),
+        'max': df['revenue'].max()
+    }
+
+   
+ -----------------------------------------
+ Group related functions together:
+
+ # AOV-relaterade funktioner grupperade
+def calculate_aov(df):
+    """Beräknar genomsnittligt ordervärde"""
+    # ... din kod
+
+def calculate_order_distribution(df):
+    """Analyserar spridning av ordervärden"""
+    # ... din kod
+
+def get_aov_insights(df):
+    """Returnerar kompletta AOV-insikter"""
+    return {
+        'aov': calculate_aov(df),
+        'distribution': calculate_order_distribution(df)
+    }

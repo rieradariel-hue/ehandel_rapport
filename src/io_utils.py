@@ -4,3 +4,5 @@ import pandas as pd
 
 def ladda_data(csv_fil):
     return pd.read_csv(csv_fil)
+
+# ändrar  och pushar

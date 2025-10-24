@@ -65,9 +65,10 @@ print("Medelvärdet av intäkter per kategori:", int(round(average_revenue)))
 # Beräkna total intäkt per kategori
 total_revenue_per_category = df.groupby('category')['revenue'].sum()
 
-# Topp 3 produkter med högst intäkt (https://www.reddit.com/r/learnpython/comments/16gjt3f/pandas_data_frame_selects_the_top_three_score…)
-top_3_categories = total_revenue_per_category.nlargest(3)
-print("Top 3 categories with highest revenue:")
-print(top_3_categories)
-
-# lägg till källhänvisning.
+# Topp 3 produkter med högst intäkt 
+# (https://www.reddit.com/r/learnpython/comments/16gjt3f/pandas_data_frame_selects_the_top_three_score…)
+def get_top_3_categories(df):
+    total_revenue_per_category = df.groupby("category")["revenue"].sum()
+    top_3 = total_revenue_per_category.nlargest(3)
+    return top_3
+#test

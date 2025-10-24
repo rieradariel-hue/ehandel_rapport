@@ -10,6 +10,12 @@ csv_path = os.path.join(base_dir, "..", "data", "ecommerce_sales.csv")
 # Läs CSV
 df = pd.read_csv(csv_path)
 
+# För att kunna load_data
+def ladda_data():
+    csv_path = os.path.join("data", "ecommerce_sales.csv")
+    df = pd.read_csv(csv_path)
+    return df
+
     # Räknar genomsnittligt ordervärde (AOV)
     # AOV = Total/Antal ordrar  
 
@@ -71,4 +77,3 @@ def get_top_3_categories(df):
     total_revenue_per_category = df.groupby("category")["revenue"].sum()
     top_3 = total_revenue_per_category.nlargest(3)
     return top_3
-#test

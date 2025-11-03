@@ -87,4 +87,24 @@ if __name__ == "__main__":
     # Beräkna total intäkt per kategori
     total_revenue_per_category = df.groupby('category')['revenue'].sum()
 
+     # Beräkna % intäkt per kategori
+    total_revenue_all = df["revenue"].sum()
 
+    percent_sports = Sports_df["revenue"].sum() / total_revenue_all
+    print("Procent intäkt för Sport kategori:", round(percent_sports * 100), "%")
+
+    percent_clothing = Clothing_df["revenue"].sum()/total_revenue_all
+    print("Procent intäkt för Clothing kategori:", round(percent_clothing*100),"%")
+
+    percent_home = Home_df["revenue"].sum()/total_revenue_all
+    print("Procent intäkt för Home kategori:", round(percent_home*100),"%")
+
+    percent_electronics = Electronics_df["revenue"].sum()/total_revenue_all
+    print("Procent intäkt för Electronics kategori:", round(percent_electronics*100),"%")
+
+    percent_toys = Toys_df["revenue"].sum()/total_revenue_all
+    print("Procent intäkt för Toys kategori:", round(percent_toys*100),"%")
+
+    percent_beauty = Beauty_df["revenue"].sum()/total_revenue_all
+    print("Procent intäkt för Beauty kategori:", round(percent_beauty*100),"%")
+    
